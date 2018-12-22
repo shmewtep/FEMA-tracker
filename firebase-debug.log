@@ -1,0 +1,88 @@
+[debug] [2018-11-07T21:01:44.800Z] ----------------------------------------------------------------------
+[debug] [2018-11-07T21:01:44.803Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kelsey\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-11-07T21:01:44.803Z] CLI Version:   6.0.1
+[debug] [2018-11-07T21:01:44.803Z] Platform:      win32
+[debug] [2018-11-07T21:01:44.803Z] Node Version:  v11.1.0
+[debug] [2018-11-07T21:01:44.805Z] Time:          Wed Nov 07 2018 16:01:44 GMT-0500 (Eastern Standard Time)
+[debug] [2018-11-07T21:01:44.805Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-07T21:01:44.817Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-07T21:01:44.818Z] > authorizing via signed-in user
+[debug] [2018-11-07T21:01:44.818Z] [iam] checking project fema-tracker for permissions ["firebase.projects.get"]
+[debug] [2018-11-07T21:01:44.820Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fema-tracker:testIamPermissions  
+
+[debug] [2018-11-07T21:01:45.171Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T21:01:45.173Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fema-tracker  
+ 
+[debug] [2018-11-07T21:01:45.413Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kelsey\Documents\2018-2019\CPTR460\FEMA'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-11-07T21:01:46.518Z] Fetching environment
+[debug] [2018-11-07T21:01:46.521Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/348926957793:getServerAppConfig  
+ 
+[debug] [2018-11-07T21:01:46.728Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T21:01:46.728Z] Starting @google-cloud/functions-emulator
+[debug] [2018-11-07T21:01:49.528Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
+[debug] [2018-11-08T23:33:59.559Z] ----------------------------------------------------------------------
+[debug] [2018-11-08T23:33:59.563Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kelsey\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-11-08T23:33:59.563Z] CLI Version:   6.0.1
+[debug] [2018-11-08T23:33:59.563Z] Platform:      win32
+[debug] [2018-11-08T23:33:59.563Z] Node Version:  v11.1.0
+[debug] [2018-11-08T23:33:59.631Z] Time:          Thu Nov 08 2018 18:33:59 GMT-0500 (Eastern Standard Time)
+[debug] [2018-11-08T23:33:59.631Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-08T23:33:59.660Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-08T23:33:59.661Z] > authorizing via signed-in user
+[debug] [2018-11-08T23:33:59.661Z] [iam] checking project fema-tracker for permissions ["firebase.projects.get"]
+[debug] [2018-11-08T23:33:59.663Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-08T23:33:59.663Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-08T23:34:00.096Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-08T23:34:00.136Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fema-tracker:testIamPermissions  
+
+[debug] [2018-11-08T23:34:00.464Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-08T23:34:00.467Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fema-tracker  
+ 
+[debug] [2018-11-08T23:34:00.723Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kelsey\Documents\2018-2019\CPTR460\FEMA'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-11-08T23:34:07.568Z] Fetching environment
+[debug] [2018-11-08T23:34:07.571Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/348926957793:getServerAppConfig  
+ 
+[debug] [2018-11-08T23:34:08.063Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-08T23:34:08.064Z] Starting @google-cloud/functions-emulator
+[debug] [2018-11-08T23:34:12.912Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.
+[debug] [2018-11-12T21:14:32.925Z] ----------------------------------------------------------------------
+[debug] [2018-11-12T21:14:32.928Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kelsey\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-11-12T21:14:32.928Z] CLI Version:   6.0.1
+[debug] [2018-11-12T21:14:32.928Z] Platform:      win32
+[debug] [2018-11-12T21:14:32.928Z] Node Version:  v11.1.0
+[debug] [2018-11-12T21:14:32.931Z] Time:          Mon Nov 12 2018 16:14:32 GMT-0500 (Eastern Standard Time)
+[debug] [2018-11-12T21:14:32.931Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-12T21:14:32.945Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-12T21:14:32.946Z] > authorizing via signed-in user
+[debug] [2018-11-12T21:14:32.946Z] [iam] checking project fema-tracker for permissions ["firebase.projects.get"]
+[debug] [2018-11-12T21:14:32.948Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fema-tracker:testIamPermissions  
+
+[debug] [2018-11-12T21:14:33.310Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-12T21:14:33.311Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fema-tracker  
+ 
+[debug] [2018-11-12T21:14:33.569Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kelsey\Documents\2018-2019\CPTR460\FEMA'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-11-12T21:14:35.512Z] Fetching environment
+[debug] [2018-11-12T21:14:35.516Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/348926957793:getServerAppConfig  
+ 
+[debug] [2018-11-12T21:14:35.818Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-12T21:14:35.818Z] Starting @google-cloud/functions-emulator
+[debug] [2018-11-12T21:14:39.559Z] Parsing function triggers
+[info] i  functions: No HTTPS functions found. Use firebase functions:shell if you would like to emulate other types of functions.

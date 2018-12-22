@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEMA Tracker</title>
+
+
+  <!-- Material Design Theming -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Import and configure the Firebase SDK -->
+  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-database.js"></script>
+
+
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+
+  
+
+</head>
+
+
+<body>
+
+  <!-- Header section containing title -->
+  <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+        <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+          <a href="/"><h3>FEMA Tracking System</h3></a>
+        </div>
+      </div>
+    </header>
+
+  <main class="mdl-layout__content mdl-color--grey-100">
+      <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+  
+        <!-- Container for the demo -->
+        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+          <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+            <h2 class="mdl-card__title-text">FEMA Tracking System Login</h2>
+          </div>
+          <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+            
+            <div id="loginPage">
+                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="txtEmail" name="email" placeholder="Email"/>
+                &nbsp;&nbsp;&nbsp;
+                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="txtPassword" name="password" placeholder="Password"/>
+                <br/><br/>
+                <div id='loginPageButtons'>
+                    <button class="mdl-button mdl-js-button" id="btnLogin" name="signin" >Sign In</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <!-- "mdl-button-raised" -->
+                    <button class="mdl-button mdl-js-button" id="btnSignup" name="signup">Sign Up</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <p id = "pForgotPassword">Forgot your password?</p>
+                    <button class="linklike-button" id="pwReset" name="verify-email">Send Password Reset Email</button>
+                </div>
+            </div>
+            
+            <div id='pageForgotPass' style='display:none'>
+              <p>Enter your email here:</p>
+              <input class='mdl-textfield__input', id='txtForgotEmail' placeholder='Email' type='email'>
+              <button class='mdl-button mdl-js-button' id='btnForgotEmail'>Submit</button>
+              <button class='mdl-button mdl-js-button' id='btnCancelReset'>Cancel</button>
+            </div>
+
+            <div id="signupPage" style="display:none">
+                <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="txtPasswordConfirm" name="password" placeholder="Confirm password"/>
+                <select class="mdl-button" name="User Type" id="selectUserType">
+                    <option value="none" id="selectOption">select ...</option>
+                    <option value="admin" id="adminOption">FEMA Administrator</option>
+                    <option value="commcenter" id="commcenterOption">Community Center</option>
+                    <option value="driver" id="driverOption">Driver</option>
+                    <option value='volunteer' id='volunteerOption'>Volunteer</option>
+                </select>
+                <input class="mdl-textfield__input" style="width:auto;display:none" id="txtCommCenterName" name="community center name" placeholder="Center Name"/>
+                <input class="mdl-textfield__input" style="width:auto;display:none" id="txtLastName" name="first name" placeholder="First Name"/>
+                <input class="mdl-textfield__input" style="width:auto;display:none" id="txtFirstName" name="last name" placeholder="Last Name"/>
+                <input class="mdl-textfield__input" style="width:auto;display:none" id="txtAddress" name="address" placeholder="Address"/>
+                <input class='mdl-textfield__input' id='txtCredentials' style='display:none' placeholder='Credentials'>
+                <button class="mdl-button mdl-js-button" style='display:block' id="btnSubmit" name="submit">Submit</button>
+            </div>
+            
+            <h5 id='txtWelcome' style='display:none'></h5>
+            <div id="adminHome" style="display:none">
+              <button class="mdl-button mdl-js-button mdl-button--raised" id="btnRequest">Request Items</button>
+              <button class="mdl-button mdl-js-button mdl-button--raised" id="btnRequestVolunteers">Request Volunteers</button>
+              <button class='mdl-button mdl-js-button mdl-button--raised' id='btnViewRequests'>View Requests</button>
+              <div id='itemRequestForm' style='display:none'>
+                <input class="mdl-textfield__input" id="txtItemName" name="item name" placeholder="Item"/>
+                <input type='number' class="mdl-textfield__input" id="txtQuantity" name="item quantity" placeholder="Quanitity"/>
+                <input class="mdl-textfield__input" id="txtLocation" name="location" placeholder="Location"/>
+                <button class="mdl-button mdl-js-button" style='display:inline' id="btnSubmitRequest" name="submit">Submit</button>
+                <button class="mdl-button mdl-js-button" style='display:inline' id="btnCancelRequest" name="cancel">Cancel</button>
+              </div>
+              <div id='volunteerRequestForm' style='display:none'>
+                <input class="mdl-textfield__input" id="txtRequiredSkills" name="required skills" placeholder="Required Skills"/>
+                <input type='number' class="mdl-textfield__input" id="txtQuantityVolunteers" name="Volunteer quantity" placeholder="Quanitity"/>
+                <input class="mdl-textfield__input" id="txtVolunteerLocation" name="location" placeholder="Location"/>
+                <button class="mdl-button mdl-js-button" style='display:inline' id="btnSubmitVolunteerRequest" name="submit">Submit</button>
+                <button class="mdl-button mdl-js-button" style='display:inline' id="btnCancelVolunteerRequest" name="cancel">Cancel</button>
+              </div>
+              <div id='viewRequests' style='display:none'>
+                <ul id='requestsView'>
+
+                </ul>
+              </div>
+            </div>
+
+            <div id="commcenterHome" style="display:none">
+              <div id='viewFulfilRequests'>
+                 <ul id='requestsFulfill'>
+
+                </ul>
+              </div>
+              
+            </div>
+
+            <div id="driverHome" style="display:none">
+              <div id='viewTransportRequests'>
+                <ul id='requestsTransport'>
+
+                </ul>
+              </div>
+              <button id = 'btnViewDeliveries' class='mdl-button mdl-js-button mdl-button--raised clickedFalse'>View Current Deliveries</button>
+              <div id='viewDeliveries' style='display:none'>
+              </div>
+            </div>
+            
+            <div id='volunteerHome' style='display:none'>
+              <div id='viewVolunteerRequests'>
+
+              </div>
+            </div>
+
+            <button style="display:none" class="mdl-button mdl-js-button mdl-button--raised" id="btnLogout" name="logout">Log Out</button>
+
+          </div>
+        </div>
+  
+      </div>
+    </main>
+
+   <footer></footer>
+
+   <script src="fema-init.js"></script>
+</body>
+
+</html>

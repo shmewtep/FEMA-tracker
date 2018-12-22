@@ -1,0 +1,49 @@
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAvwwIe-aZ8tn2YyGPcoBbMCLkuu3AL2rA",
+    authDomain: "fema-tracker.firebaseapp.com",
+    databaseURL: "https://fema-tracker.firebaseio.com",
+    projectId: "fema-tracker",
+    storageBucket: "fema-tracker.appspot.com",
+    messagingSenderId: "348926957793"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-functions.js"></script>
+
+<script>
+  var config = {
+    // ...
+  };
+  firebase.initializeApp(config);
+</script>
+
+</head>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAvwwIe-aZ8tn2YyGPcoBbMCLkuu3AL2rA",
+    authDomain: "fema-tracker.firebaseapp.com",
+    databaseURL: "https://fema-tracker.firebaseio.com",
+    projectId: "fema-tracker",
+    storageBucket: "fema-tracker.appspot.com",
+    messagingSenderId: "348926957793"
+  };
+  firebase.initializeApp(config);
+</script>
+
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+});
